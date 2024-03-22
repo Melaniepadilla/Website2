@@ -4,6 +4,11 @@ closeBtn = document.getElementById('close-btn')
 canvas = document.getElementById('canvas')
 ctx = canvas.getContext('2d')
 
+score = 0
+
+brickRowCount = 9
+brickColumnCount = 5
+
 // Create Ball properties
 ball = {
     x: canvas.width / 2,
@@ -25,6 +30,27 @@ paddle = {
     dx: 0,
 }
 
+//Create Brick properties
+brickInfo = {
+    w: 70,
+    h: 20,
+    padding: 10,
+    offsetX: 45,
+    offsetY: 60,
+    visible: true
+}
+
+// Create Bricks
+bricks = []
+for (let i = 0; i < brickRowCount; i++) {
+    bricks[i] = []
+    for (let j = 0; j < brickColumnCount; j++) {
+        const x = i * (brickInfo.w + brickInfo.padding) + brickInfo.offsetX
+        const y = j * (brickInfo.h + brickInfo.padding) + brickInfo.offsetY
+        bricks[i][j] = {x, y, ...brickInfo}
+    }
+}
+
 //draw ball on canvas
 function drawBall() {
     ctx.beginPath()
@@ -33,10 +59,43 @@ function drawBall() {
     ctx.fill()
     ctx.closePath()
 }
+//draw paddle on canvas
+function drawPaddle() {
+    ctx.beginPath()
+    ctx.rect(paddle.x, paddle.y, paddle.w, paddle.h)
+    ctx.fillStyle = '#0095dd'
+    ctx.fill()
+    ctx.closePath()
+}
 
+// Draw score on canvas
+function drawScore() {
+    ctx.font ='20px Arial'
+    ctx.fillText(`Score: ${score}`, canvas.width-100, 30)
+}
 
-drawBall()
+//draw bricks on canvas
+function drawBricks() {
+    bricks.forEach(column => {
+        column.forEach(brick => {
+            ctx.beginPath()
+            ctx.rect(brick.x, brick.y, brick.w, brick.h)
+            ctx.fillStyle = brick.visible ? '#0095dd' : 'transparent';
+            ctx.fill()
+            ctx.closePath()
+        })
+    })
+}
 
+//Draw everything
+function draw() {
+    drawBall()
+    drawPaddle()
+    drawScore()
+    drawBricks()
+}
+
+draw()
 
 
 // Rules open and close event handelers
