@@ -95,11 +95,14 @@ function draw() {
     drawBricks()
 }
 
+// Update the canvas drawing and animation
 function update() {
-
+    movePaddle()
     draw()
-    requestAnimationFrame()
+    requestAnimationFrame(update)
 }
+
+update()
 
 
 // Rules open and close event handelers
