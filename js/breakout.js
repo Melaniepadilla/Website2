@@ -132,6 +132,8 @@ function keyUp(e) {
 document.addEventListener('keydown', keyDown)
 document.addEventListener('keyup', keyUp)
 
+
+//dvd sign
 function moveBall() {
     ball.x = ball.x + ball.dx
     ball.y = ball.y + ball.dy
@@ -140,7 +142,23 @@ function moveBall() {
     if (ball.y + ball.size < 0) {
         ball.dy = -1 * ball.dy
     }
+
+    //wall collision right
+    if (ball.x + ball.size > canvas.width) {
+        ball.dx = -1 * ball.dx
+    }
+
+    //wall collision bottom
+    if (ball.y + ball.size > canvas.height) {
+        ball.dy = -1 * ball.dy
+    }
+
+    //wall collision left
+    if (ball.x + ball.size < 0) {
+        ball.dx = -1 * ball.dx
+    }
 }
+
 
 
 // Update the canvas drawing and animation
