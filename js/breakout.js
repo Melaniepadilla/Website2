@@ -89,6 +89,7 @@ function drawBricks() {
 
 //Draw everything
 function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
     drawBall()
     drawPaddle()
     drawScore()
@@ -108,9 +109,16 @@ function keyDown(e) {
    }
 }
 
+// Keyup event
+function keyUp(e) {
+    if (e.key == 'ArrowRight' || e.key == 'Right') {
+        paddle.dx = 0
+    }
+}
 
 // Keyboard event handlers
 document.addEventListener('keydown', keyDown)
+document.addEventListener('keyup', keyUp)
 
 // Update the canvas drawing and animation
 function update() {
