@@ -189,7 +189,7 @@ function moveBall() {
 }
 //Increase score
 function increaseScore() {
-    score++ //score = score + 1
+    score = score + 1 //score = score + 1
 
     if (score == brickRowCount * brickColumnCount) {
         score = 0
