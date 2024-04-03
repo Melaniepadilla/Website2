@@ -47,7 +47,11 @@ for (let i = 0; i < brickRowCount; i++) {
     for (let j = 0; j < brickColumnCount; j++) {
         const x = i * (brickInfo.w + brickInfo.padding) + brickInfo.offsetX
         const y = j * (brickInfo.h + brickInfo.padding) + brickInfo.offsetY
-        bricks[i][j] = {x, y, ...brickInfo}
+        bricks[i][j] = {
+            x,
+            y,
+            ...brickInfo
+        }
     }
 }
 
@@ -70,8 +74,8 @@ function drawPaddle() {
 
 // Draw score on canvas
 function drawScore() {
-    ctx.font ='20px Arial'
-    ctx.fillText(`Score: ${score}`, canvas.width-100, 30)
+    ctx.font = '20px Arial'
+    ctx.fillText(`Score: ${score}`, canvas.width - 100, 30)
 }
 
 //draw bricks on canvas
@@ -111,13 +115,13 @@ function movePaddle() {
 
 //Keydown Event
 function keyDown(e) {
-   // console.log(e.key)
-   if (e.key == 'ArrowRight' || e.key == 'Right') {
-    paddle.dx = paddle.speed
-   }
-   if (e.key == 'ArrowLeft' || e.key == 'Left') {
-    paddle.dx = -paddle.speed
-   }
+    // console.log(e.key)
+    if (e.key == 'ArrowRight' || e.key == 'Right') {
+        paddle.dx = paddle.speed
+    }
+    if (e.key == 'ArrowLeft' || e.key == 'Left') {
+        paddle.dx = -paddle.speed
+    }
 }
 
 // Keyup event
@@ -151,14 +155,60 @@ function moveBall() {
     //wall collision bottom
     if (ball.y + ball.size > canvas.height) {
         ball.dy = -1 * ball.dy
+        showAllBricks()
+        score = 0
     }
 
     //wall collision left
     if (ball.x + ball.size < 0) {
         ball.dx = -1 * ball.dx
     }
+
+    //paddle collision
+    if (
+        ball.x - ball.size > paddle.x && ball.x + ball.size < paddle.x + paddle.w && ball.y + ball.size > paddle.y
+    ) {
+        ball.dy = -1 * ball.speed
+    }
+
+    //brick collision
+    brick.forEach(column => {
+        column.forEach(brick {
+            if (brick.visible) {
+                if (
+                    ball.x - ball.size > brick.x && //left brick side
+                    ball.x + ball.size < brick.x + brick.w && //right
+                    ball.y + ball.size > brick.y && //top
+                    ball.y - ball.size < brick.y + brick.h //Bottom
+                ) {
+                    ball.dy = -1 * ball.dy
+                    brick.visible = false
+                    increaseScore()
+                }
+
+            }
+        })
+    })
+
+}
+//Increase score
+function increaseScore() {
+    score++ //score = score + 1
+
+    if (score == brickRowCount * brickColumnCount) {
+        score = 0
+        showAllBricks()
+    }
 }
 
+//Reset
+function showAllBricks() {
+    bricks.forEach(column => {
+        column.forEach(brick => {
+            brick.visible = true
+        })
+    })
+}
 
 
 // Update the canvas drawing and animation
