@@ -218,7 +218,6 @@ function update() {
     movePaddle()
     draw()
     //put in if statement to stop game
-    if
     //requestAnimationFrame(update)
 }
 
