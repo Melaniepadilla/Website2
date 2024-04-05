@@ -82,7 +82,7 @@ function drawBricks() {
         column.forEach(brick => {
             ctx.beginPath()
             ctx.rect(brick.x, brick.y, brick.w, brick.h)
-            ctx.fillStyle = brick.visible ? 'pink' : 'transparent';
+            ctx.fillStyle = brick.visible ? 'purple' : 'transparent';
             ctx.fill()
             ctx.closePath()
         })
@@ -214,7 +214,7 @@ function showAllBricks() {
 
 // Update canvas drawing and animation
 function update() {
-    moveBall()
+    //moveBall()
     movePaddle()
     draw()
     requestAnimationFrame(update)
