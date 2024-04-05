@@ -214,10 +214,11 @@ function showAllBricks() {
 
 // Update canvas drawing and animation
 function update() {
-    //moveBall()
+    moveBall()
     movePaddle()
     draw()
-    requestAnimationFrame(update)
+    //put in if statement to stop game
+    //requestAnimationFrame(update)
 }
 
 update()
