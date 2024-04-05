@@ -218,14 +218,7 @@ function update() {
     movePaddle()
     draw()
     //put in if statement to stop game
-    do
-    {
-        requestAnimationFrame(update)
-    }
-    while
-    {
-        score > 0
-    }
+    //requestAnimationFrame(update)
 }
 
 update()
