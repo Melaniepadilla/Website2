@@ -33,6 +33,8 @@ body {
 .btn {
     border: 0;
     background-color: white;
-    color: #51
+    color: #516dff;
+    padding: 15px 20px;
+    cursor: pointer
 
 }
