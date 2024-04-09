@@ -73,7 +73,7 @@ h1 {
     cursor: pointer;
     font-family: inherit;
     width: 150px;
-    height 150px;
+    height: 150px;
 }
 .choose-insect-btn:hover {
     background-color: white;
@@ -110,12 +110,12 @@ h1 {
     top: 0;
     left: 50%;
     /* opacity: 0; */
-    transform: translate(-50%, -150%)
+    transform: translate(-50%, -150%);
     transition: transform 0.4s ease-in;
 }
 /* add visible to message to see html */
 .message.visible {
-    transform: translate(-50%, 150%)
+    transform: translate(-50%, 150%);
     /* opacity: 1; */
 }
 
