@@ -25,14 +25,17 @@ choose_insect_btns.forEach(btn => {
         startGame()
     })
 })
-
+// timer
 function startGame() {
     setInterval(increaseTime, 1000)
 }
 
 function increaseTime() {
     let m = Math.floor(seconds / 60)
-    let s = 
+    let s = seconds % 60
+    if (m < 10) {
+        
+    }
 }
 
 
