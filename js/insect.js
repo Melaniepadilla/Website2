@@ -42,6 +42,13 @@ functiom createInsect() {
 
 function catchInsect() {
     increaseScore()
+    this.classList.add('caught')
+    setTimeout(() => this.remove(), 2000)
+    addInsects()
+}
+
+function addInsects() {
+    setTimeout(create)
 }
 
 function increaseScore() {
@@ -49,7 +56,8 @@ function increaseScore() {
     if (score > 19) {
         message.classList.add('visible')
     }
-    scoreElement.innerHTML = `Score: 
+    scoreEl.innerHTML = `Score: ${score}`
+
 }
 
 function getRandomLocation() {
