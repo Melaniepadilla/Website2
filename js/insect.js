@@ -43,6 +43,7 @@ function increaseTime() {
     seconds++
 }
 
+// fix display bugs (doesnt work)
 
 function createInsect() {
     const insect = document.createElement('div')
