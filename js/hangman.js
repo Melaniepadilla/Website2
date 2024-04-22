@@ -34,6 +34,8 @@ function displayWord() {
    }
 }
 
+//update the wrong letters
+
 //keydown letter press
 window.addEventListener('keydown', e => {
     if (e.keyCode >= 65 && e.keyCode <=90) {
@@ -45,9 +47,15 @@ window.addEventListener('keydown', e => {
 
                 displayWord()
             } else {
-                show notification()
+                showNotification()
             } else {
-                if (!)
+                if (!wrongLetters.includes(letter)) {
+                    wrongLetters.push(letter)
+
+                    updateWrongLettersEl()
+                } else {
+                    showNotification()
+                }
             }
         }
     }
