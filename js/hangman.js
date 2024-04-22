@@ -3,4 +3,9 @@ const wrongLettersEl = document.getElementById('wrong-letters')
 const playAgainBtn = document.getElementById('play-again')
 const popup = document.getElementById('popup-container')
 const notification = document.getElementById('notification-container')
-const finalMessage = d
+const finalMessage = document.getElementByOd('final-message')
+const figureParts = document.querySelectorAll('figure-part')
+
+const word = ['application', 'programming', 'interface', 'wizard']
+
+let selectedIndex = 
