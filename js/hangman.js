@@ -14,7 +14,7 @@ let selectedWord = word[selectedIndex]
 const correctLetters = []
 const wrongLetters = []
 
-//show hidden word
+//show hidden word (doesnt work??)
 function displayWord() {
     wordEl.innerHTML = `
     ${selectedWord
@@ -23,7 +23,8 @@ function displayWord() {
         <span class="letter">
         ${correctLetters.includes(letter) ? letter : ''}
         </span>
-        `)}
+        ` ).join('')
+    }
 
     `
 }
