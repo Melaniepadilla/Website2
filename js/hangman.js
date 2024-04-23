@@ -93,4 +93,10 @@ window.addEventListener('keydown', e => {
     }
 })
 
+//restart game and play again
+playAgainBtn.addEventListener('click', () => {
+    correctLetter.length = 0
+    wrongLetters
+})
+
 displayWord()
