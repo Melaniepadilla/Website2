@@ -37,6 +37,9 @@ function displayWord() {
 //update the wrong letters
 function updateWrongLettersEl() {
     console.log('Update Wrong')
+    wrongLetterEl.innerHTML = `
+      ${wrongLetters.length > 0 ? '<p>Wrong</p>'}
+    `
 }
 
 //show notification
