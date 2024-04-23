@@ -35,6 +35,18 @@ function displayWord() {
 }
 
 //update the wrong letters
+function updateWrongLettersEl() {
+    console.log('Update Wrong')
+}
+
+//show notification
+function showNotification() {
+    notification.classList.add('show')
+
+    setTimeout(() => {
+        notification.classList.remove('show')
+    }, 2000)
+}
 
 //keydown letter press
 window.addEventListener('keydown', e => {
