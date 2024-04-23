@@ -37,8 +37,9 @@ function displayWord() {
 //update the wrong letters
 function updateWrongLettersEl() {
     console.log('Update Wrong')
-    wrongLetterEl.innerHTML = `
+    wrongLettersEl.innerHTML = `
       ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+      ${wrongLetters.map(letter => `<span>${letter}</span>`)}
     `
 }
 
@@ -51,7 +52,7 @@ function showNotification() {
     }, 2000)
 }
 
-//keydown letter press
+//keydown letter press (check letters v letter?)
 window.addEventListener('keydown', e => {
     if (e.keyCode >= 65 && e.keyCode <=90) {
         const letter = e.key
