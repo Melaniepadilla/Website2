@@ -127,3 +127,18 @@ h1 {
 .notification-container.show {
     transform: translateY(-50px);
 }
+/* back btn */
+.btn {
+    text-decoration: none;
+    padding: 0.5rem;
+    border: 3px solid black;
+    color: black;
+    font-family: "Ariel", cursive;
+    font-weight: 400;
+    font-style: normal;
+    top:5%;
+    left:5%;
+    height:40px;
+    position: absolute;
+    background: rgb(255,255,255);
+  }
