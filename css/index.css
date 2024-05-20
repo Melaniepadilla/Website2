@@ -8,14 +8,14 @@
 
 /* title */
 h1 {
-    background: rbg();
+    background: none;
     font-family: "Rozha One", serif;
     font-weight: 400;
     font-style: normal;
     font-size: 60px;
     height: 100px;
     text-align: center;
-    color: rgb(229, 222, 250);
+    color: rgb(255, 222, 250);
 
 }
 
@@ -26,7 +26,7 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     text-align: center;
-    color: rgb(100, 82, 161);
+    color: rgb(255, 82, 161);
     align-items: center;
     justify-content: center;
     position: absolute;
@@ -38,20 +38,17 @@ body {
 
 /* links */
 a {
-    color: rgb(92, 72, 150);
+    color: rgb(255, 72, 150);
     text-decoration: none;
     z-index: 1;
     padding: 1.5rem 3rem;
     margin: 1rem;
     border-radius: 5px;
     border: none;
-    background: rgb(229, 222, 250);
+    background: rgb(255, 222, 250);
     display: flex;
     align-items: center;
     justify-content: center;
 
 
 }
-
-
-
