@@ -1,1 +1,57 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Rozha+One&family=Zeyada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Lexend:wght@100..900&family=Rozha+One&family=Zeyada&display=swap');
+* {
+    box-sizing: borderbox;
+    margin: 0;
+}
+
+/* title */
+h1 {
+    background: none;
+    font-family: "Rozha One", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+    height: 100px;
+    text-align: center;
+    color: rgb(229, 222, 250);
+
+}
+
+/* bottom half */
+body {
+    font-size: 25px;
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-align: center;
+    color: rgb(100, 82, 161);
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-size: cover;
+    height: 100vh;
+    padding: 0;
+    margin: auto;
+}
+
+/* links */
+a {
+    color: rgb(92, 72, 150);
+    text-decoration: none;
+    z-index: 1;
+    padding: 1.5rem 3rem;
+    margin: 1rem;
+    border-radius: 5px;
+    border: none;
+    background: rgb(229, 222, 250);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+
+
