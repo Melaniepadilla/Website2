@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -26,16 +26,7 @@ h1{
     width: 450px;
 }
 
-.figure-container {
-    fill: transparent;
-    stroke: #ffffff;
-    stroke-width: 4px;
-    stroke-linecap: round;
-}
 
-.figure-part {
-    display: none;
-}
 
 .wrong-letters-container {
     position: absolute;
@@ -88,3 +79,13 @@ h1{
     position: absolute;
     background: rgb(255,255,255);
   } */
+.figure-container {
+    fill: transparent;
+    stroke: #ffffff;
+    stroke-width: 4px;
+    stroke-linecap: round;
+}
+
+.figure-part {
+    display: none;
+}
