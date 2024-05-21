@@ -159,7 +159,7 @@ h1 {
     background: rgb(255,255,255);
   } */
 
-  .win {
+  .win-message {
     line-height: 1.7;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
@@ -174,12 +174,12 @@ h1 {
     transition: transform 0.4s ease-in;
 }
 /* add visible to message to see html */
-.win.visible {
+.win-message.visible {
     opacity: 1;
     transform: translate(-50%, 150%);
 
 }
-.lose {
+.lose-message {
     line-height: 1.7;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
@@ -194,7 +194,7 @@ h1 {
     transition: transform 0.4s ease-in;
 }
 /* add visible to message to see html */
-.lose.visible {
+.lose-message.visible {
     opacity: 1;
     transform: translate(-50%, 150%);
 
