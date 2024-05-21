@@ -14,23 +14,25 @@ let selectedWord = word[selectedIndex]
 const correctLetters = []
 const wrongLetters = []
 
+let continueRunning = true
 //show hidden word (doesnt work??)
 function displayWord() {
     wordEl.innerHTML = `
-    ${selectedWord
+      ${selectedWord
         .split('')
         .map(letter => `
-        <span class="letter">
-        ${correctLetters.includes(letter) ? letter : ''}
-        </span>
-        ` ).join('')
+          <span class="letter">
+            ${correctLetters.includes(letter) ? letter : ''}
+          </span>
+        `).join('')
     }
-   `
-   const innerWord = wordEl.innerText..replace(/\n/g, '')
+    `
+   const innerWord = wordEl.innerText.replace(/\n/g, '')
 
    if (innerWord == selectedWord) {
-    finalMessage 'congratulations! You won!'
+    finalMessage.innerText = 'Congratulations! You won!'
     popup.style.display = 'flex'
+    continueRunning = false
    }
 }
 
