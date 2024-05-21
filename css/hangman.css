@@ -79,6 +79,21 @@ h1{
     position: absolute;
     background: rgb(255,255,255);
   } */
+
+  .btn {
+    background-color: rgb(49,50,84);
+    font-size: 1.2rem;
+    padding: 1.5rem 3rem;
+    margin: 1rem;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: "Concert One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+}
 .figure-container {
     fill: transparent;
     stroke: #ffffff;
