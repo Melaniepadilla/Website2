@@ -76,6 +76,16 @@ function increaseScore() {
         message.classList.add('visible')
     }
     scoreEl.innerHTML = `Score: ${score}`
+    if(score == 60 && seconds < 30)
+    {
+        message.classList.remove('visible')
+        winmessage.classList.add('visible')
+    }
+ if(seconds > 30 && score < 60)
+ {
+        losemmessage.classList.add('visible')
+        message.classList.remove('visible')
+    }
 
 }
 
