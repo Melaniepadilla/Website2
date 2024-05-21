@@ -41,8 +41,8 @@ function updateWrongLettersEl() {
     // Display wrong letters
     console.log('Update Wrong')
     wrongLettersEl.innerHTML = `
-      ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
-      ${wrongLetters.map(letter => `<span>${letter}</span>`)}
+    ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+    ${wrongLetters.map(letter => `<span>${letter}</span>`)}
     `
     //display parts
     figureParts.forEach((part, index) => {
