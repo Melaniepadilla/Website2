@@ -1,52 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Rozha+One&family=Zeyada&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Lexend:wght@100..900&family=Rozha+One&family=Zeyada&display=swap');
 * {
-    box-sizing: borderbox;
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
-/* title */
-h1 {
-    background: none;
-    font-family: "Rozha One", serif;
+body {
+    color: teal;
+    padding-bottom: 50px;
+    font-family: "Abril Fatface", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 60px;
-    height: 100px;
-    text-align: center;
-    color: rgb(255, 222, 250);
-
 }
 
-/* bottom half */
-body {
-    font-size: 25px;
-    font-family: "Lexend", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    background-image: url(images/Orangechairs.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    color: rgb(255, 82, 161);
+    position: relative;
+    margin-bottom: 20px;
+    z-index: -2;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin: 0 0 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.content h2, .content h3 {
+    font-size: 150%;
+    margin: 20px 0;
+}
+
+.content p {
+    color: #555;
+    line-height: 30px;
+    letter-spacing: 1.2px;
+}
+
+
+.nav {
+    position: fixed;
+    background-color: #222;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    background-size: cover;
-    height: 100vh;
-    padding: 0;
-    margin: auto;
 }
 
-/* links */
-a {
-    color: rgb(255, 72, 150);
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 7px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav.active {
+    background-color: white;
+    box-shadow: 0 2px 10px rbga(0,0,0,0.3);
+}
+
+.nav.active a {
+    color: black;
+}
+
+.nav.active .container {
+    padding: 10px 0;
+}
+
+.nav a.current,
+.nav a:hover {
+    color: teal;
+    font-weight: bold;
+}
+
+/* Back Button */
+.btn {
     text-decoration: none;
     z-index: 1;
-    padding: 1.5rem 3rem;
-    margin: 1rem;
-    border-radius: 5px;
-    border: none;
-    background: rgb(255, 222, 250);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    margin: 0;
+    padding: 0.5rem;
+    border: 3px solid black;
+    color: black;
+    font-family: "Ariel", cursive;
+    font-weight: 400;
+    font-style: normal;
+    top:15%;
+    left:2%;
+    height:40px;
+    position: absolute;
+    background: rgb(255,255,255);
+  }
+
