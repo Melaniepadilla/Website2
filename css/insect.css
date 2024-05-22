@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #dea0b8;
+    background-color: purple;
     color: white;
     font-family: "Press Start 2P", system-ui;
     height: 100vh;
@@ -32,7 +32,7 @@ body {
 .btn {
     border: 0;
     background-color: white;
-    color: #dea0b8;
+    color: purple;
     padding: 15px 20px;
     cursor: pointer;
     font-family: inherit;
