@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #ba5072;
+    background-color: purple;
     color: white;
     font-family: "Arvo", serif;
     display: flex;
@@ -90,7 +90,7 @@ h1 {
 }
 
 .popup {
-    background: #ba5072;
+    background: purple;
     border-radius: 5px;
     box-shadow: 0 15px 10px 3px rgba(0,0,0,0.1);
     padding: 20px;
