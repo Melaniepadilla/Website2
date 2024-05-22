@@ -5,18 +5,16 @@ const popup = document.getElementById('popup-container')
 const notification = document.getElementById('notification-container')
 const finalMessage = document.getElementById('final-message')
 const figureParts = document.querySelectorAll('.figure-part')
+let stopGame = false;
 
+const word = ['aplication', 'programing', 'interface', 'wizard']
 
-const word = ['application', 'programming', 'interface', 'wizard']
-
-let gameEnding = false;
 let selectedIndex = Math.floor(word.length * Math.random())
 let selectedWord = word[selectedIndex]
 
 const correctLetters = []
 const wrongLetters = []
 
-//show hidden word
 function displayWord(){
     wordEl.innerHTML = `
     ${selectedWord
@@ -32,9 +30,9 @@ function displayWord(){
     const innerWord=wordEl.innerText.replace(/\n/g, '')
 
     if(innerWord == selectedWord){
-        finalMessage.innerText = 'You win!'
+        finalMessage.innerText = 'You Win!!'
         popup.style.display = 'flex'
-        GameEnding = true;
+        stopGame = true;
     }
 }
 
@@ -55,13 +53,13 @@ function updateWrongLettersEl(){
     })
 
     if(wrongLetters.length == figureParts.length){
-        finalMessage.innerText = 'You lost! The correct word was: ' + selectedWord + '!'
+        finalMessage.innerText = 'You lost! The Correct Word Was ' + selectedWord + '!'
         popup.style.display = 'flex'
+        stopGame = true;
     }
 }
 
 
-//show notif
 function showNotification(){
     notification.classList.add('show')
 
@@ -70,9 +68,8 @@ function showNotification(){
     }, 2000)
 }
 
-//keydown letter press
 window.addEventListener('keydown', e=>{
-    if (gameEnding) return;
+    if (stopGame) return;
 
     console.log(e.keyCode)
     if (e.keyCode >= 65 && e.keyCode <=90){
@@ -99,10 +96,9 @@ window.addEventListener('keydown', e=>{
 })
 
 playAgainBtn.addEventListener('click', () => {
-    gameEnding = false;
+    stopGame = false;
     correctLetters.length = 0
     wrongLetters.length = 0
-    console.log('u clicked')
     selectedIndex = Math.floor(word.length * Math.random())
     selectedWord = word[selectedIndex]
 
