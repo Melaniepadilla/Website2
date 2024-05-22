@@ -8,6 +8,9 @@ const message = document.getElementById('message')
 let seconds = 0
 let score = 0
 let selected_insect = {}
+const win = document.getElementById('win')
+const loss = document.getElementById('loss')
+
 
 start_btn.addEventListener('click', () => {
     screens[0].classList.add('up')
@@ -19,13 +22,35 @@ choose_insect_btns.forEach(btn => {
         const alt = img.getAttribute('alt')
         const src = img.getAttribute('src')
         screens[1].classList.add('up')
-        selected_insects = {src, alt}
+        selected_insect = {src, alt}
         setTimeout(createInsect, 1000)
-
         startGame()
     })
 })
-// timer
+
+function createInsect() {
+    const insect = document.createElement('div')
+    insect.classList.add('insect')
+    const { x, y } = getRandomLocation()
+    insect.style.top = `${y}px`
+    insect.style.left = `${x}px`
+    insect.innerHTML = `<img src="${selected_insect.src}" alt="${selected_insect.alt}" style = "transform: rotate(${Math.random() * 360}deg)" />`
+    insect.addEventListener('click', catchInsect)
+    game_container.appendChild(insect)
+}
+
+function catchInsect() {
+    increaseScore()
+    this.classList.add('caught')
+    setTimeout(() => this.remove(), 2000)
+    addInsects()
+}
+
+function addInsects() {
+    setTimeout(createInsect, 1000)
+    setTimeout(createInsect, 1500)
+}
+
 function startGame() {
     setInterval(increaseTime, 1000)
 }
@@ -39,54 +64,24 @@ function increaseTime() {
     if (s < 10) {
         s = `0${s}`
     }
-    timeEl.innerHTML = `Time: ${m}: ${s}`
+    timeEl.innerHTML = `Time: ${m}:${s}`
     seconds++
+    if (score < 60 && seconds > 30) {
+        message.classList.remove('visible')
+        loss.classList.add('visible')
+    }
 }
 
-// fix display bugs (doesnt work)
-
-function createInsect() {
-    const insect = document.createElement('div')
-    insect.classList.add('insect')
-    const { x, y } = getRandomLocation()
-    insect.style.top = `${y}px`
-    insect.style.left = `${x}px`
-    insect.innerHTML = `<img src="${selected_insect.src}"
-    alt="${selected_insect.alt}" style = "transform: rotate(${Math.random() * 360}deg" />`
-    insect.addEventListener('click', catchInsect)
-    game_container.appendChild(insect)
-}
-
-
-function catchInsect() {
-    increaseScore()
-    this.classList.add('caught')
-    setTimeout(() => this.remove(), 2000)
-    addInsects()
-}
-
-function addInsects() {
-    setTimeout(createInsect, 1000)
-    setTimeout(createInsect, 1500)
-}
-// add winner when score > 60
 function increaseScore() {
     score++
-    if (score > 19) {
+    if (score > 19 && seconds <30) {
         message.classList.add('visible')
     }
     scoreEl.innerHTML = `Score: ${score}`
-    if(score == 60 && seconds < 30)
-    {
+    if (score >= 60 && seconds < 30) {
         message.classList.remove('visible')
-        win-message.classList.add('visible')
+        win.classList.add('visible')
     }
- if(seconds > 30 && score < 60)
- {
-        lose-message.classList.add('visible')
-        message.classList.remove('visible')
-    }
-
 }
 
 function getRandomLocation() {
